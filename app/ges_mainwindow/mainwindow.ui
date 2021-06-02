@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+  </widget>
+  <widget class="QMenuBar" name="menubar_pyris">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuWorklist">
+    <property name="title">
+     <string>Worklist</string>
+    </property>
+    <addaction name="actionEsecuzione_esame"/>
+    <addaction name="actionRefertazione"/>
+    <addaction name="actionFirma"/>
+    <addaction name="separator"/>
+    <addaction name="actionControllo"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionGestione_pazienti"/>
+    <addaction name="actionPrenotazioni"/>
+    <addaction name="actionConsegna"/>
+    <addaction name="separator"/>
+    <addaction name="actionPreferenze"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuWorklist"/>
+  </widget>
+  <action name="actionEsecuzione_esame">
+   <property name="text">
+    <string>Esecuzione esame</string>
+   </property>
+  </action>
+  <action name="actionRefertazione">
+   <property name="text">
+    <string>Refertazione</string>
+   </property>
+  </action>
+  <action name="actionFirma">
+   <property name="text">
+    <string>Firma</string>
+   </property>
+  </action>
+  <action name="actionControllo">
+   <property name="text">
+    <string>Controllo</string>
+   </property>
+  </action>
+  <action name="actionGestione_pazienti">
+   <property name="text">
+    <string>Gestione pazienti</string>
+   </property>
+  </action>
+  <action name="actionPrenotazioni">
+   <property name="text">
+    <string>Prenotazioni</string>
+   </property>
+  </action>
+  <action name="actionPreferenze">
+   <property name="text">
+    <string>Preferenze</string>
+   </property>
+  </action>
+  <action name="actionConsegna">
+   <property name="text">
+    <string>Consegna</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

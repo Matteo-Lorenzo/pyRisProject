@@ -1,0 +1,2 @@
+class ConsegnaModel():
+    pass
