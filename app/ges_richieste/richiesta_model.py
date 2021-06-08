@@ -1,0 +1,2 @@
+class RichiestaModel():
+    pass

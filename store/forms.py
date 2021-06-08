@@ -1,10 +1,9 @@
+from django import forms
 from django.contrib.auth.forms import UserCreationForm
-
-from store.models import Utente
+from .models import Utente
 
 
 class UtenteCreationForm(UserCreationForm):
-
     class Meta:
         model = Utente
-        fields = '__all__'
+        fields = "__all__"

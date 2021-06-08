@@ -1,43 +1,12 @@
 from django.contrib import admin
+from .forms import UtenteCreationForm
 from django.contrib.auth.admin import UserAdmin
 
-from store.forms import UtenteCreationForm
-from store.models import Radiologia, Modality, SalaDiagnostica, Frase, Organo, Frasario, Revisione, Prestazione, Esame, \
-    NomenclatorePrestazioni, Preparazione, Paziente, Utente, Attrezzatura
 
+from store.models import AziendaRefertazione, Radiologia, Metodica, SalaDiagnostica, SalaDiagnosticaLista, Frase, \
+    Organo, Apparato, Frasario, OrganoFrase, Revisione, Prestazione, Esame, \
+    NomenclatorePrestazioni, Preparazione, Paziente, Utente, Attrezzatura, EsameLista, ApparatoLista, OrganoLista, NomenclatoreLista
 
-class SalaDiagnosticaLista(admin.TabularInline):
-    model = SalaDiagnostica
-
-
-@admin.register(Radiologia)
-class RadiologiaAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'ragione_sociale')
-
-    inlines = [
-        SalaDiagnosticaLista,
-    ]
-
-
-@admin.register(Modality)
-class ModalityAdmin(admin.ModelAdmin):
-    list_display = ('sigla', 'descrizione')
-
-
-@admin.register(SalaDiagnostica)
-class SalaDiagnosticaAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(Attrezzatura)
-class AttrezzaturaAdmin(admin.ModelAdmin):
-    pass
-
-'''
-@admin.register(TipologiaUtente)
-class TipologiaUtenteAdmin(admin.ModelAdmin):
-    pass
-'''
 
 @admin.register(Utente)
 class UtenteAdmin(UserAdmin):
@@ -80,10 +49,77 @@ class UtenteAdmin(UserAdmin):
         )
     )
 
+@admin.register(AziendaRefertazione)
+class AziendeRefertazioneAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'ragione_sociale')
+
+@admin.register(Radiologia)
+class RadiologiaAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'ragione_sociale')
+
+    inlines = [
+        SalaDiagnosticaLista,
+    ]
+
+@admin.register(Metodica)
+class ModalityAdmin(admin.ModelAdmin):
+    list_display = ('codice', 'descrizione')
+
+    inlines = [
+        ApparatoLista,
+    ]
+
+
+@admin.register(Apparato)
+class ApparatoAdmin(admin.ModelAdmin):
+    list_display = ('codice', 'descrizione')
+
+    inlines = [
+        OrganoLista,
+    ]
+
+
+@admin.register(Organo)
+class OrganoAdmin(admin.ModelAdmin):
+    list_display = ('codice', 'descrizione')
+
+    inlines = [
+        NomenclatoreLista,
+    ]
+
+
+@admin.register(NomenclatorePrestazioni)
+class NomenclatorePrestazioniAdmin(admin.ModelAdmin):
+    list_display = ('esame', 'descrizione')
+
+
+@admin.register(SalaDiagnostica)
+class SalaDiagnosticaAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Attrezzatura)
+class AttrezzaturaAdmin(admin.ModelAdmin):
+    pass
+
+
+'''
+@admin.register(TipologiaUtente)
+class TipologiaUtenteAdmin(admin.ModelAdmin):
+    pass
+
+
+
+    
+'''
+
 
 @admin.register(Paziente)
 class PazienteAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('codice_paziente', 'cognome', 'nome', 'data_nascita')
+    inlines = [
+        EsameLista,
+    ]
 
 
 @admin.register(Preparazione)
@@ -91,9 +127,7 @@ class PreparazioneAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(NomenclatorePrestazioni)
-class NomenclatorePrestazioniAdmin(admin.ModelAdmin):
-    pass
+
 
 
 @admin.register(Esame)
@@ -116,8 +150,8 @@ class FrasarioAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Organo)
-class OrganoAdmin(admin.ModelAdmin):
+@admin.register(OrganoFrase)
+class OrganoFraseAdmin(admin.ModelAdmin):
     pass
 
 

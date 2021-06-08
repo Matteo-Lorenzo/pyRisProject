@@ -1,46 +1,36 @@
-from django.apps import AppConfig
 import datetime
-from django.contrib.auth.hashers import make_password
+
+from django.apps import AppConfig
 from django.db.models.signals import post_migrate
 
 
-def inizializzazione(sender, **kwargs):
+
+def create_required_objects(sender, **kwargs):
     from .models import Utente
     from .models import Radiologia
-    from .models import Modality
     from .models import SalaDiagnostica
     from .models import Attrezzatura
+    from django.contrib.auth.hashers import make_password
 
-    modalities = [{'modality': 'RX', 'desc': 'Radiologia Convenzionale'},
-                  {'modality': 'CT', 'desc': 'Tomografia assiale'},
-                  {'modality': 'MR', 'desc': 'Risonanza magnetica'},
-                  {'modality': 'US', 'desc': 'Ecografia'},
-                  ]
+
+
+
 
     sale = [
-        {'nome': 'Diagnostica RX', 'desc': 'Sala Raggi'},
-        {'nome': 'Diagnostica CT', 'desc': 'Sala TAC'},
-        {'nome': 'Diagnostica MR', 'desc': 'Sala Risonanza'},
-        {'nome': 'Diagnostica US', 'desc': 'Sala Ecografia'},
-    ]
+            {'nome': 'Diagnostica RX', 'desc': 'Sala Raggi'},
+            {'nome': 'Diagnostica CT', 'desc': 'Sala TAC'},
+            {'nome': 'Diagnostica MR', 'desc': 'Sala Risonanza'},
+            {'nome': 'Diagnostica US', 'desc': 'Sala Ecografia'},
+          ]
 
     attrazzatura = [
-        {'marca': 'MegaCorp', 'modello': 'RX123', 'descrizione': 'Digitale Diretta', 'modality': 'RX',
-         'sala': 'Diagnostica RX', 'ae': 'AERX01'},
-        {'marca': 'MegaCorp', 'modello': 'CT391', 'descrizione': 'TAC Multislice', 'modality': 'CT',
-         'sala': 'Diagnostica CT', 'ae': 'AECT01'},
-        {'marca': 'MegaCorp', 'modello': 'MR9911', 'descrizione': 'Risonanza 1.5  Tesla', 'modality': 'MR',
-         'sala': 'Diagnostica MR', 'ae': 'AEMR01'},
-        {'marca': 'MegaCorp', 'modello': 'US4C1', 'descrizione': 'Ecografo 3D', 'modality': 'US',
-         'sala': 'Diagnostica US', 'ae': 'AEUS01'},
+        {'marca': 'MegaCorp', 'modello': 'RX123', 'descrizione': 'Digitale Diretta', 'modality': 'RX', 'sala': 'Diagnostica RX', 'ae': 'AERX01'},
+        {'marca': 'MegaCorp', 'modello': 'CT391', 'descrizione': 'TAC Multislice', 'modality': 'CT', 'sala': 'Diagnostica CT', 'ae': 'AECT01'},
+        {'marca': 'MegaCorp', 'modello': 'MR9911', 'descrizione': 'Risonanza 1.5  Tesla', 'modality': 'MR', 'sala': 'Diagnostica MR', 'ae': 'AEMR01'},
+        {'marca': 'MegaCorp', 'modello': 'US4C1', 'descrizione': 'Ecografo 3D', 'modality': 'US', 'sala': 'Diagnostica US', 'ae': 'AEUS01'},
     ]
 
-    for elem in modalities:
-        if not Modality.objects.filter(sigla=elem['modality']).exists():
-            m = Modality()
-            m.sigla = elem['modality']
-            m.descrizione = elem['desc']
-            m.save()
+
 
     # creazione radiologia
     if not Radiologia.objects.filter(nome='RADIOLOGIA').exists():
@@ -49,7 +39,7 @@ def inizializzazione(sender, **kwargs):
         r.ragione_sociale = 'Centro Radiologico'
         r.save()
 
-    # cur_rad = Radiologia.objects.get(nome='RADIOLOGIA')
+    #cur_rad = Radiologia.objects.get(nome='RADIOLOGIA')
 
     # creazione sale diagnostiche
     for sala in sale:
@@ -67,7 +57,7 @@ def inizializzazione(sender, **kwargs):
             a.marca = equipment['marca']
             a.modello = equipment['modello']
             a.descrizione = equipment['descrizione']
-            a.modality = Modality.objects.get(sigla=equipment['modality'])
+            a.modality = equipment['modality']
             a.sala_diagnostica = SalaDiagnostica.objects.get(nome=equipment['sala'])
             a.dicom_ae_title = equipment['ae']
             a.anno_acquisto = datetime.date.today()
@@ -107,4 +97,5 @@ class StoreConfig(AppConfig):
     name = 'store'
 
     def ready(self):
-        post_migrate.connect(inizializzazione, sender=self)
+        post_migrate.connect(create_required_objects, sender=self)
+
