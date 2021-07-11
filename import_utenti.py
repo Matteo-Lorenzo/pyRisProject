@@ -5,7 +5,7 @@ from store.models import Radiologia, Utente
 
 radiologia = Radiologia.objects.all().first()
 
-tree = ET.parse('/Users/matteolorenzo/Desktop/da_importare/utenti.xml')
+tree = ET.parse('../da_importare/utenti.xml')
 root = tree.getroot()
 
 def import_utenti():

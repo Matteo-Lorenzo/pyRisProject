@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 
 from store.models import Metodica, Apparato, Organo
 
-tree = ET.parse('/Users/matteolorenzo/Desktop/da_importare/nomenclatore.xml')
+tree = ET.parse('../da_importare/nomenclatore.xml')
 root = tree.getroot()
 
 def import_metodiche():

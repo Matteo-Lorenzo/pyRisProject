@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1200</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>10</y>
+     <x>10</x>
+     <y>-10</y>
      <width>201</width>
      <height>61</height>
     </rect>
@@ -30,83 +30,186 @@
     </font>
    </property>
    <property name="text">
-    <string>Controllo is working</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>60</y>
-     <width>131</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Simula Modifica</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_ok">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>250</y>
-     <width>113</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Accetta</string>
+    <string>Worklist di Controllo</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_cancel">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>250</y>
+     <x>1060</x>
+     <y>720</y>
      <width>113</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>Annulla</string>
+    <string>Esci</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="lista_controllo">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>109</y>
+     <width>1180</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>50</y>
+     <width>171</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Modalità Diagnostiche:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="diagnostiche">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>50</y>
+     <width>251</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="alla_data">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>10</y>
+     <width>110</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>dd/MM/yyyy</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>10</y>
+     <width>41</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dal:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>10</y>
+     <width>41</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Al:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>5</y>
+     <width>391</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Filtro esami:</string>
+   </property>
+   <widget class="QRadioButton" name="rb_acc_non_es">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>181</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Accettati e non eseguiti</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rb_es_non_ref">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>20</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Eseguiti e non refertati</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rb_ref_non_fir">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trascritti e non firmati</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QDateEdit" name="dalla_data">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>10</y>
+     <width>110</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>dd/MM/yyyy</string>
    </property>
   </widget>
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>Controllo</receiver>
-   <slot>modificato()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>243</x>
-     <y>69</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>240</x>
-     <y>109</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_ok</sender>
-   <signal>clicked()</signal>
-   <receiver>Controllo</receiver>
-   <slot>accetta()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>133</x>
-     <y>263</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>174</x>
-     <y>193</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>btn_cancel</sender>
    <signal>clicked()</signal>
@@ -114,12 +217,108 @@
    <slot>annulla()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>290</x>
-     <y>266</y>
+     <x>1110</x>
+     <y>736</y>
     </hint>
     <hint type="destinationlabel">
      <x>328</x>
      <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dalla_data</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Controllo</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>319</x>
+     <y>15</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>3</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>alla_data</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Controllo</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>515</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>423</x>
+     <y>4</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>diagnostiche</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Controllo</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>432</x>
+     <y>64</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>389</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_acc_non_es</sender>
+   <signal>clicked()</signal>
+   <receiver>Controllo</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>793</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>721</x>
+     <y>29</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_ref_non_fir</sender>
+   <signal>clicked()</signal>
+   <receiver>Controllo</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>817</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>707</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_es_non_ref</sender>
+   <signal>clicked()</signal>
+   <receiver>Controllo</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1011</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1185</x>
+     <y>22</y>
     </hint>
    </hints>
   </connection>
@@ -128,5 +327,6 @@
   <slot>modificato()</slot>
   <slot>accetta()</slot>
   <slot>annulla()</slot>
+  <slot>aggiorna_worklist()</slot>
  </slots>
 </ui>

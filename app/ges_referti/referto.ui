@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog_Referto</class>
+ <widget class="QDialog" name="Dialog_Referto">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Refertazione</string>
+  </property>
+  <widget class="QPushButton" name="btn_ok">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>650</y>
+     <width>113</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Salva</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_cancel">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>650</y>
+     <width>113</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Annulla</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>90</y>
+     <width>901</width>
+     <height>541</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="referto">
+    <attribute name="title">
+     <string>Referto</string>
+    </attribute>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Descrizione Esame:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="descrizione_esame">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>861</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Testo del referto:</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="testo_referto">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>110</y>
+       <width>861</width>
+       <height>321</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="medico_refertatore">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>440</y>
+       <width>211</width>
+       <height>26</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>440</y>
+       <width>131</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Medico Refertatore:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_21">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>440</y>
+       <width>81</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>T.S.R.M.:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="tecnico_esecutore">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>440</y>
+       <width>271</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_stampa">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>470</y>
+       <width>121</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Stampa</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_firma_stampa">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>470</y>
+       <width>221</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Firma e Stampa il Referto</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_firma">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>470</y>
+       <width>121</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Firma</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_info">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>90</y>
+       <width>251</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(252, 1, 7);</string>
+     </property>
+     <property name="text">
+      <string>Impossibile firmare un referto il cui testo è vuoto</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_trascritto">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>470</y>
+       <width>121</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Trascritto</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="dati">
+    <attribute name="title">
+     <string>Dati Generici</string>
+    </attribute>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>40</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Codice C.U.P. :</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="codice_esterno">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>40</y>
+       <width>201</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>90</y>
+       <width>111</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Data Richiesta:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="data_richiesta">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>90</y>
+       <width>201</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::NoButtons</enum>
+     </property>
+     <property name="displayFormat">
+      <string>dd/MM/yyyy</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="impegnativa">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>140</y>
+       <width>201</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>140</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Impegnativa n.:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>190</y>
+       <width>141</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Medico Richiedente:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="medico_richiedente">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>190</y>
+       <width>201</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="maxLength">
+      <number>64</number>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="anamnesi">
+    <attribute name="title">
+     <string>Anamnesi</string>
+    </attribute>
+    <widget class="QPlainTextEdit" name="text_anamnesi">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>841</width>
+       <height>131</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>10</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Anamnesi o dati clinici</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="text_contenuto_richiesta">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>200</y>
+       <width>841</width>
+       <height>131</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>180</y>
+       <width>281</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Contenuto della richiesta o dell'impegnativa</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="text_motivo_esame">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>370</y>
+       <width>841</width>
+       <height>131</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>350</y>
+       <width>181</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Motivazione dell'esame</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="valutazioni">
+    <attribute name="title">
+     <string>Valutazioni</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_qualita">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>50</y>
+       <width>181</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Qualità</string>
+     </property>
+     <widget class="QRadioButton" name="rb_bassa">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bassa</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rb_buona">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Buona</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rb_ottima">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ottima</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rb_non_valutata">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>120</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Non Valutata</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_esito">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>50</y>
+       <width>181</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Esito</string>
+     </property>
+     <widget class="QRadioButton" name="rb_non_valutato">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Non Valutato</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rb_negativo">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Negativo</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rb_positivo">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Positivo</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QComboBox" name="classe_dose_cumulativa">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>110</y>
+       <width>281</width>
+       <height>26</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>80</y>
+       <width>111</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Dose Paziente:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>230</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Impressioni:</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="impressioni">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>250</y>
+       <width>761</width>
+       <height>181</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLineEdit" name="codice_paziente">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>10</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>10</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nome Paziente:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="nome_paziente">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>10</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_22">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>10</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Codice Paziente:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="codice_esame">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>50</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_23">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>50</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Codice Esame:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>50</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Data Esame:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="data_completato">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>50</y>
+     <width>181</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::NoButtons</enum>
+   </property>
+   <property name="displayFormat">
+    <string>dd/MM/yyyy</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_informazioni">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>650</y>
+     <width>113</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Informazioni</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_ok</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog_Referto</receiver>
+   <slot>accetta()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>186</x>
+     <y>262</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_cancel</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog_Referto</receiver>
+   <slot>annulla()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>287</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_firma</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog_Referto</receiver>
+   <slot>firma()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>713</x>
+     <y>602</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>630</x>
+     <y>649</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_stampa</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog_Referto</receiver>
+   <slot>stampa()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>298</x>
+     <y>600</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>301</x>
+     <y>647</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_firma_stampa</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog_Referto</receiver>
+   <slot>firma_stampa()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>617</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>475</x>
+     <y>653</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>testo_referto</sender>
+   <signal>textChanged()</signal>
+   <receiver>Dialog_Referto</receiver>
+   <slot>referto_modificato()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>629</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>964</x>
+     <y>214</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_informazioni</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog_Referto</receiver>
+   <slot>mostra_informazioni()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>653</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>212</x>
+     <y>662</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_trascritto</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog_Referto</receiver>
+   <slot>trascritto()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>399</x>
+     <y>601</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>363</x>
+     <y>660</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>modificato()</slot>
+  <slot>accetta()</slot>
+  <slot>annulla()</slot>
+  <slot>firma()</slot>
+  <slot>stampa()</slot>
+  <slot>firma_stampa()</slot>
+  <slot>referto_modificato()</slot>
+  <slot>mostra_informazioni()</slot>
+  <slot>trascritto()</slot>
+  <slot>ges_qualita()</slot>
+ </slots>
+</ui>

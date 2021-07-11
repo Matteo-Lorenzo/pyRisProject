@@ -2,10 +2,35 @@ from django.contrib import admin
 from .forms import UtenteCreationForm
 from django.contrib.auth.admin import UserAdmin
 
-
-from store.models import AziendaRefertazione, Radiologia, Metodica, SalaDiagnostica, SalaDiagnosticaLista, Frase, \
+from store.models import AziendaRefertazione, Radiologia, Metodica, SalaDiagnostica, Frase, \
     Organo, Apparato, Frasario, OrganoFrase, Revisione, Prestazione, Esame, \
-    NomenclatorePrestazioni, Preparazione, Paziente, Utente, Attrezzatura, EsameLista, ApparatoLista, OrganoLista, NomenclatoreLista
+    NomenclatorePrestazioni, Preparazione, Paziente, Utente, Attrezzatura
+
+
+class SalaDiagnosticaLista(admin.TabularInline):
+    model = SalaDiagnostica
+
+
+class ApparatoLista(admin.TabularInline):
+    model = Apparato
+    fields = ('codice', 'descrizione')
+    readonly_fields = ('codice', 'descrizione')
+
+
+class OrganoLista(admin.TabularInline):
+    model = Organo
+    fields = ('codice', 'descrizione')
+    readonly_fields = ('codice', 'descrizione')
+
+
+class NomenclatoreLista(admin.TabularInline):
+    model = NomenclatorePrestazioni
+    fields = ('esame', 'descrizione')
+    readonly_fields = ('esame', 'descrizione')
+
+
+class EsameLista(admin.TabularInline):
+    model = Esame
 
 
 @admin.register(Utente)
@@ -44,14 +69,17 @@ class UtenteAdmin(UserAdmin):
                     'flag_schedulazione_esame',
                     'flag_accettazione_clinica',
                     'flag_completamento_esame',
+                    'flag_cartella_radiologica',
                 )
             }
         )
     )
 
+
 @admin.register(AziendaRefertazione)
 class AziendeRefertazioneAdmin(admin.ModelAdmin):
     list_display = ('nome', 'ragione_sociale')
+
 
 @admin.register(Radiologia)
 class RadiologiaAdmin(admin.ModelAdmin):
@@ -60,6 +88,7 @@ class RadiologiaAdmin(admin.ModelAdmin):
     inlines = [
         SalaDiagnosticaLista,
     ]
+
 
 @admin.register(Metodica)
 class ModalityAdmin(admin.ModelAdmin):
@@ -107,9 +136,6 @@ class AttrezzaturaAdmin(admin.ModelAdmin):
 @admin.register(TipologiaUtente)
 class TipologiaUtenteAdmin(admin.ModelAdmin):
     pass
-
-
-
     
 '''
 
@@ -125,9 +151,6 @@ class PazienteAdmin(admin.ModelAdmin):
 @admin.register(Preparazione)
 class PreparazioneAdmin(admin.ModelAdmin):
     pass
-
-
-
 
 
 @admin.register(Esame)

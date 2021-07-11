@@ -21,8 +21,8 @@ class AnagraficaModel():
         print(self.originale)
 
     def is_modified(self):  # Notifica se sono state fatte modifiche ai dati
-        print(self.originale)
-        print(model_to_dict(self.paziente_corrente))
+        print(self.originale)  # Stampe per avere un po' di console logging
+        print(model_to_dict(self.paziente_corrente))  # Stampe per avere un po' di console logging
         if self.originale is None:
             return False
         return self.originale != model_to_dict(self.paziente_corrente)

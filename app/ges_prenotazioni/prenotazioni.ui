@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1200</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>10</y>
+     <x>20</x>
+     <y>-10</y>
      <width>221</width>
      <height>61</height>
     </rect>
@@ -30,83 +30,66 @@
     </font>
    </property>
    <property name="text">
-    <string>Prenotazioni is working</string>
+    <string>Agenda di Prenotazione</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_cancel">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>250</y>
+     <x>1050</x>
+     <y>710</y>
      <width>113</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>Annulla</string>
+    <string>Esci</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QCalendarWidget" name="calendario">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>60</y>
-     <width>131</width>
-     <height>32</height>
+     <x>30</x>
+     <y>100</y>
+     <width>1141</width>
+     <height>561</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="diagnostiche">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>30</y>
+     <width>251</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Tutte le Modalità</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>30</y>
+     <width>171</width>
+     <height>24</height>
     </rect>
    </property>
    <property name="text">
-    <string>Simula Modifica</string>
+    <string>Modalità Diagnostiche:</string>
    </property>
-  </widget>
-  <widget class="QPushButton" name="btn_ok">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>250</y>
-     <width>113</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Accetta</string>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>Prenotazioni</receiver>
-   <slot>modificato()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>284</x>
-     <y>72</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>282</x>
-     <y>110</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_ok</sender>
-   <signal>clicked()</signal>
-   <receiver>Prenotazioni</receiver>
-   <slot>accetta()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>182</x>
-     <y>261</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>207</x>
-     <y>209</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>btn_cancel</sender>
    <signal>clicked()</signal>

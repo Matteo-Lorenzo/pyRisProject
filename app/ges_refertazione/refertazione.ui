@@ -6,18 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1200</width>
+    <height>775</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="titolo">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>10</y>
+     <x>10</x>
+     <y>-10</y>
      <width>221</width>
      <height>61</height>
     </rect>
@@ -30,83 +30,215 @@
     </font>
    </property>
    <property name="text">
-    <string>Refertazione is working</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>60</y>
-     <width>131</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Simula Modifica</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_ok">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>250</y>
-     <width>113</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Accetta</string>
+    <string>Worklist di Refertazione</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_cancel">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>250</y>
+     <x>1060</x>
+     <y>720</y>
      <width>113</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>Annulla</string>
+    <string>Esci</string>
    </property>
+  </widget>
+  <widget class="QTableWidget" name="lista_refertazione">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>109</y>
+     <width>1180</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QDateEdit" name="dalla_data">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>10</y>
+     <width>110</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>dd/MM/yyyy</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>41</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dal:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>10</y>
+     <width>41</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Al:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="alla_data">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>10</y>
+     <width>110</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>dd/MM/yyyy</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="urgenti">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>10</y>
+     <width>87</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>Urgenti</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="diagnostiche">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>50</y>
+     <width>251</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>50</y>
+     <width>171</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Modalità Diagnostiche:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_aggiorna">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>720</y>
+     <width>113</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Aggiorna</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>5</y>
+     <width>251</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Associazione Esame/Medico:</string>
+   </property>
+   <widget class="QRadioButton" name="rb_tutti">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tutti</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rb_specialista">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>20</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Specialista</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rb_spec_non_attrib">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Specialista + Non Attribuito</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>Refertazione</receiver>
-   <slot>modificato()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>251</x>
-     <y>81</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>250</x>
-     <y>125</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_ok</sender>
-   <signal>clicked()</signal>
-   <receiver>Refertazione</receiver>
-   <slot>accetta()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>171</x>
-     <y>258</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>200</x>
-     <y>189</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>btn_cancel</sender>
    <signal>clicked()</signal>
@@ -123,10 +255,156 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>lista_refertazione</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>Refertazione</receiver>
+   <slot>referta_esame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>432</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>172</x>
+     <y>742</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>diagnostiche</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Refertazione</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>606</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>772</x>
+     <y>46</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_aggiorna</sender>
+   <signal>clicked()</signal>
+   <receiver>Refertazione</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>73</x>
+     <y>753</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>360</x>
+     <y>748</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>urgenti</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>Refertazione</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>693</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>767</x>
+     <y>14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_tutti</sender>
+   <signal>clicked()</signal>
+   <receiver>Refertazione</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>845</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1098</x>
+     <y>26</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_specialista</sender>
+   <signal>clicked()</signal>
+   <receiver>Refertazione</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>954</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1075</x>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_spec_non_attrib</sender>
+   <signal>clicked()</signal>
+   <receiver>Refertazione</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>904</x>
+     <y>57</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1105</x>
+     <y>57</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dalla_data</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Refertazione</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>381</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>246</x>
+     <y>31</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>alla_data</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Refertazione</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>539</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>217</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>modificato()</slot>
   <slot>accetta()</slot>
   <slot>annulla()</slot>
+  <slot>referta_esame()</slot>
+  <slot>aggiorna_worklist()</slot>
  </slots>
 </ui>

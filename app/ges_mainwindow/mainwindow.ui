@@ -59,6 +59,8 @@
     <addaction name="actionConsegna"/>
     <addaction name="separator"/>
     <addaction name="actionPreferenze"/>
+    <addaction name="separator"/>
+    <addaction name="actionLogout"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuWorklist"/>
@@ -101,6 +103,11 @@
   <action name="actionConsegna">
    <property name="text">
     <string>Consegna</string>
+   </property>
+  </action>
+  <action name="actionLogout">
+   <property name="text">
+    <string>Logout</string>
    </property>
   </action>
  </widget>

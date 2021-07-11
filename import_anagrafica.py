@@ -8,7 +8,7 @@ from datetime import datetime
 
 radiologia = Radiologia.objects.all().first()
 
-tree = ET.parse('/Users/matteolorenzo/Desktop/da_importare/anagrafica.xml')
+tree = ET.parse('../da_importare/anagrafica.xml')
 root = tree.getroot()
 
 def import_anagrafica():
@@ -16,7 +16,7 @@ def import_anagrafica():
     for anagrafica in root:
         p = Paziente()
         p.codice_paziente = anagrafica.find('Codice').text
-        p.codice_estermo = anagrafica.find('CodiceDipartim').text
+        p.codice_esterno = anagrafica.find('CodiceDipartim').text
         #p.codice_fiscale = anagrafica.find('CodFiscale').text
         p.codice_fiscale = anagrafica.find('CodiceReg').text
         #p.tessera_sanitaria = anagrafica.find('CodiceReg').text

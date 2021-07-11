@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1200</width>
+    <height>775</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>10</y>
+     <x>10</x>
+     <y>-10</y>
      <width>201</width>
-     <height>61</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -30,83 +30,163 @@
     </font>
    </property>
    <property name="text">
-    <string>Firma is working</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>60</y>
-     <width>131</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Simula Modifica</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_ok">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>250</y>
-     <width>113</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Accetta</string>
+    <string>Worklist di Firma</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_cancel">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>250</y>
+     <x>1060</x>
+     <y>720</y>
      <width>113</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>Annulla</string>
+    <string>Esci</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="lista_firma">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>1180</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::MultiSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QPushButton" name="btn_firma_in_blocco">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>720</y>
+     <width>231</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Firma i Referti Selezionati</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="alla_data">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>10</y>
+     <width>110</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>dd/MM/yyyy</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="urgenti">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>10</y>
+     <width>87</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>Urgenti</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>10</y>
+     <width>41</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dal:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>10</y>
+     <width>171</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Modalità Diagnostiche:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="diagnostiche">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>10</y>
+     <width>251</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dalla_data">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>110</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>dd/MM/yyyy</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>10</y>
+     <width>41</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Al:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>Firma</receiver>
-   <slot>modificato()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>264</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>255</x>
-     <y>116</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_ok</sender>
-   <signal>clicked()</signal>
-   <receiver>Firma</receiver>
-   <slot>accetta()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>119</x>
-     <y>265</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>181</x>
-     <y>178</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>btn_cancel</sender>
    <signal>clicked()</signal>
@@ -114,12 +194,108 @@
    <slot>annulla()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>295</x>
-     <y>258</y>
+     <x>1060</x>
+     <y>720</y>
     </hint>
     <hint type="destinationlabel">
      <x>341</x>
      <y>173</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lista_firma</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>Firma</receiver>
+   <slot>firma_esame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>438</x>
+     <y>436</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>597</x>
+     <y>750</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_firma_in_blocco</sender>
+   <signal>clicked()</signal>
+   <receiver>Firma</receiver>
+   <slot>firma_in_blocco()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>191</x>
+     <y>751</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>749</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dalla_data</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Firma</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>294</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>226</x>
+     <y>39</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>alla_data</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Firma</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>486</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>27</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>urgenti</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>Firma</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>667</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>607</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>diagnostiche</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Firma</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>986</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>927</x>
+     <y>41</y>
     </hint>
    </hints>
   </connection>
@@ -128,5 +304,8 @@
   <slot>modificato()</slot>
   <slot>accetta()</slot>
   <slot>annulla()</slot>
+  <slot>firma_esame()</slot>
+  <slot>firma_in_blocco()</slot>
+  <slot>aggiorna_worklist()</slot>
  </slots>
 </ui>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1200</width>
+    <height>775</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>10</y>
+     <x>10</x>
+     <y>-10</y>
      <width>201</width>
      <height>61</height>
     </rect>
@@ -30,83 +30,89 @@
     </font>
    </property>
    <property name="text">
-    <string>Esame is working</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>60</y>
-     <width>131</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Simula Modifica</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_ok">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>250</y>
-     <width>113</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Accetta</string>
+    <string>Worklist di Esecuzione</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_cancel">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>250</y>
+     <x>1060</x>
+     <y>720</y>
      <width>113</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>Annulla</string>
+    <string>Esci</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="lista_esecuzione">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>1180</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QComboBox" name="diagnostiche">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>10</y>
+     <width>251</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>10</y>
+     <width>171</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Modalità Diagnostiche:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_aggiorna">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>720</y>
+     <width>113</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Aggiorna</string>
    </property>
   </widget>
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>Esame</receiver>
-   <slot>modificato()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>274</x>
-     <y>75</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>269</x>
-     <y>128</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_ok</sender>
-   <signal>clicked()</signal>
-   <receiver>Esame</receiver>
-   <slot>accetta()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>156</x>
-     <y>265</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>199</x>
-     <y>149</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>btn_cancel</sender>
    <signal>clicked()</signal>
@@ -114,12 +120,60 @@
    <slot>annulla()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>276</x>
-     <y>265</y>
+     <x>1106</x>
+     <y>755</y>
     </hint>
     <hint type="destinationlabel">
      <x>318</x>
      <y>183</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lista_esecuzione</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>Esame</receiver>
+   <slot>completa_esame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>687</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>405</x>
+     <y>740</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_aggiorna</sender>
+   <signal>clicked()</signal>
+   <receiver>Esame</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>88</x>
+     <y>759</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>303</x>
+     <y>748</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>diagnostiche</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Esame</receiver>
+   <slot>aggiorna_worklist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>991</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>738</x>
+     <y>10</y>
     </hint>
    </hints>
   </connection>
@@ -128,5 +182,7 @@
   <slot>modificato()</slot>
   <slot>accetta()</slot>
   <slot>annulla()</slot>
+  <slot>completa_esame()</slot>
+  <slot>aggiorna_worklist()</slot>
  </slots>
 </ui>

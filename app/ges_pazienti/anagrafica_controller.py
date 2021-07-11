@@ -16,10 +16,10 @@ class AnagraficaController():
         self.model.originale = None  # Fatta una nuova ricerca risetto a nullo il modello originale per il confronto
 
     def cerca_richieste(self):
-        self.model.qs_richieste = self.model.esame.objects.filter(paziente=self.model.paziente_corrente)  # Aggiungere altro filtro di selezione dello stato
+        self.model.qs_richieste = self.model.esame.objects.filter(paziente=self.model.paziente_corrente, stato_avanzamento__lte=3)
 
     def cerca_refertazione(self):
-        self.model.qs_refertazione = self.model.esame.objects.filter(paziente=self.model.paziente_corrente)  # Aggiungere altro filtro di selezione dello stato
+        self.model.qs_refertazione = self.model.esame.objects.filter(paziente=self.model.paziente_corrente, stato_avanzamento__gte=4, stato_avanzamento__lte=5)
 
     def cerca_archivio(self):
-        self.model.qs_archivio = self.model.esame.objects.filter(paziente=self.model.paziente_corrente)  # Aggiungere altro filtro di selezione dello stato
+        self.model.qs_archivio = self.model.esame.objects.filter(paziente=self.model.paziente_corrente, stato_avanzamento__gte=6, stato_avanzamento__lte=7)

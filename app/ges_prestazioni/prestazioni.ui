@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Prestazioni</class>
+ <widget class="QDialog" name="Prestazioni">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>811</width>
+    <height>641</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Prestazioni</string>
+  </property>
+  <widget class="QPushButton" name="btn_ok">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>580</y>
+     <width>113</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Inserisci</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_cancel">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>580</y>
+     <width>113</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Annulla</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_metodica">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>40</y>
+     <width>431</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_apparato">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>70</y>
+     <width>431</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_organo">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>100</y>
+     <width>431</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="lista_prestazioni">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>160</y>
+     <width>431</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>490</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Modificatori:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="modificatore">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>490</y>
+     <width>341</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>40</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Metodica:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>70</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Apparato:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>100</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Organo:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>160</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Prestazioni erogabili:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>540</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Commento:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="commento">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>540</y>
+     <width>341</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_ok</sender>
+   <signal>clicked()</signal>
+   <receiver>Prestazioni</receiver>
+   <slot>accetta()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>172</x>
+     <y>209</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_cancel</sender>
+   <signal>clicked()</signal>
+   <receiver>Prestazioni</receiver>
+   <slot>annulla()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>261</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_metodica</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Prestazioni</receiver>
+   <slot>metodica_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>481</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>655</x>
+     <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_apparato</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Prestazioni</receiver>
+   <slot>apparato_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>369</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>690</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_organo</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Prestazioni</receiver>
+   <slot>organo_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>536</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>725</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lista_prestazioni</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>Prestazioni</receiver>
+   <slot>accetta()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>494</x>
+     <y>340</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>609</x>
+     <y>565</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>modificato()</slot>
+  <slot>accetta()</slot>
+  <slot>annulla()</slot>
+  <slot>metodica_changed()</slot>
+  <slot>apparato_changed()</slot>
+  <slot>organo_changed()</slot>
+ </slots>
+</ui>

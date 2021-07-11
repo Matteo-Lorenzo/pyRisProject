@@ -1,5 +1,6 @@
 from PyQt5.QtGui import QCloseEvent
 from PyQt5.QtWidgets import QMainWindow, QAction, QMdiSubWindow, QMessageBox
+from PyQt5 import QtCore
 
 from app.ges_pazienti.anagrafica_view import AnagraficaView
 from .mainwindow_ui import Ui_MainWindow
@@ -17,6 +18,9 @@ from ..ges_esame.esame_view import EsameView
 from ..ges_firma.firma_controller import FirmaController
 from ..ges_firma.firma_model import FirmaModel
 from ..ges_firma.firma_view import FirmaView
+from ..ges_login.login_controller import LoginController
+from ..ges_login.login_model import LoginModel
+from ..ges_login.login_view import LoginView
 from ..ges_pazienti.anagrafica_controller import AnagraficaController
 from ..ges_pazienti.anagrafica_model import AnagraficaModel
 from ..ges_preferenze.preferenze_controller import PreferenzeController
@@ -28,7 +32,7 @@ from ..ges_prenotazioni.prenotazioni_view import PrenotazioniView
 from ..ges_refertazione.refertazione_controller import RefertazioneController
 from ..ges_refertazione.refertazione_model import RefertazioneModel
 from ..ges_refertazione.refertazione_view import RefertazioneView
-from ..utils import Stati, Applicazioni as App
+from ..utils import Stati, Ambiente, Applicazioni as App
 
 
 class MainWindowView(Ui_MainWindow, QMainWindow):
@@ -47,7 +51,11 @@ class MainWindowView(Ui_MainWindow, QMainWindow):
         self.actionRefertazione.triggered.connect(self.actionRefertazione_listener)
         self.actionFirma.triggered.connect(self.actionFirma_listener)
         self.actionControllo.triggered.connect(self.actionControllo_listener)
+        self.actionLogout.triggered.connect(self.actionLogout_listener)
         self.finestra_corrente = None
+        self.setWindowTitle('PyRIS - 1.0.0')
+        Ambiente.main_window = self
+        self.show_login()
         # aggiungere tutti gli altri necessari (non servono più)
 
     '''
@@ -65,6 +73,12 @@ class MainWindowView(Ui_MainWindow, QMainWindow):
 
     def actionPreferenze_listener(self):
         self.apri_nuovo(App.PREFERENZE.value, PreferenzeView, PreferenzeController, PreferenzeModel)
+
+    def actionLogout_listener(self):
+        if self.is_ok_to_switch():
+            self.show_login()
+        else:
+            QMessageBox.warning(self, 'Attenzione', "Terminare l'attività corrente")
 
     '''
         Gestione menu Worklist
@@ -98,10 +112,10 @@ class MainWindowView(Ui_MainWindow, QMainWindow):
         # if self.model.stati[applicazione] == Stati.CHIUSO: # se il componente richiesto non è già mostrato | NON SERVE PIU'
         if self.is_ok_to_switch():
             # self.before_apertura_nuova_vista()  # vede qual è il componente attualmente mostrato e, se necessario, lo chiude
-            self.model.stati[applicazione] = Stati.APERTO # imposta ad APERTO lo stato del componente richiesto
+            Ambiente.stati[applicazione] = Stati.APERTO # imposta ad APERTO lo stato del componente richiesto
             il_modello = modello()
             il_controllore = controllore(il_modello)
-            self.finestra_corrente = vista(self.model, il_modello, il_controllore) # istanzia il componente richiesto
+            self.finestra_corrente = vista(il_modello, il_controllore) # istanzia il componente richiesto
             # popolare la finestra come da modello
 
             self.finestra_corrente.setParent(self.centralwidget)
@@ -112,19 +126,27 @@ class MainWindowView(Ui_MainWindow, QMainWindow):
     def is_ok_to_switch(self):
         # ritorna True se i componenti sono tutti chiusi
         count = 0
-        for stato in self.model.stati:
-            if self.model.stati[stato] is not Stati.CHIUSO:
+        for stato in Ambiente.stati:
+            if Ambiente.stati[stato] is not Stati.CHIUSO:
                 count = count+1
         print(count)
         return count == 0
 
     def closeEvent(self, event: QCloseEvent):
-        if self.is_ok_to_switch():
-            event.accept()
-        else:
-            QMessageBox.warning(self, 'Attenzione', "Terminare l'attività corrente")
-            event.ignore()
+        event.ignore()
+        self.actionLogout_listener()
         # prevedere la non accettazione della chiusura per modifiche non salvate
+
+    def show_login(self):
+        self.menubar_pyris.hide()
+        self.setWindowTitle('PyRIS - 1.0.0')
+        login_model = LoginModel()
+        login_controller = LoginController(login_model)
+        login_view = LoginView(login_model, login_controller)
+        login_view.setParent(self.centralwidget)
+        login_view.setGeometry(0, 0, 1200, 775)
+        login_view.show()
+
 
 # print(MainWindow.__mro__)
 # print(QMainWindow.__mro__)

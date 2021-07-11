@@ -80,13 +80,123 @@ def create_required_objects(sender, **kwargs):
         u.username = 'medico'
         u.password = make_password('medico')
         u.email = 'medico@medico.com'
+        u.first_name = 'Pico'
+        u.last_name = 'Della Mirandola'
+        u.titolo = 'Dott. '
         u.tipo = 'MED'
         u.skill_referti = 'W'
+        u.skill_anagrafica_pazienti = 'W'
         u.flag_accettazione_clinica = True
         u.flag_revisione_referto = True
         u.flag_firma_referto = True
         u.flag_completamento_esame = True
         u.flag_schedulazione_esame = True
+        u.flag_cartella_radiologica = True
+        u.save()
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica RX'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica CT'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica MR'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica US'))
+        u.save()
+
+    if not Utente.objects.filter(username='tecnico').exists():
+        u = Utente()
+        u.radiologia = Radiologia.objects.get(nome='RADIOLOGIA')
+        u.username = 'tecnico'
+        u.password = make_password('tecnico')
+        u.email = 'tecnico@tecnico.com'
+        u.first_name = 'Mario'
+        u.last_name = 'Rossi'
+        u.titolo = ''
+        u.tipo = 'TEC'
+        u.skill_referti = 'R'
+        u.skill_anagrafica_pazienti = 'R'
+        u.flag_accettazione_clinica = False
+        u.flag_revisione_referto = False
+        u.flag_firma_referto = False
+        u.flag_completamento_esame = True
+        u.flag_schedulazione_esame = False
+        u.flag_cartella_radiologica = True
+        u.save()
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica RX'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica CT'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica MR'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica US'))
+        u.save()
+
+    if not Utente.objects.filter(username='segretaria').exists():
+        u = Utente()
+        u.radiologia = Radiologia.objects.get(nome='RADIOLOGIA')
+        u.username = 'segretaria'
+        u.password = make_password('segretaria')
+        u.email = 'segretaria@segretaria.com'
+        u.first_name = 'Anna'
+        u.last_name = 'Bianchi'
+        u.titolo = ''
+        u.tipo = 'AMM'
+        u.skill_referti = 'W'
+        u.skill_anagrafica_pazienti = 'W'
+        u.flag_accettazione_clinica = True
+        u.flag_revisione_referto = False
+        u.flag_firma_referto = False
+        u.flag_completamento_esame = False
+        u.flag_schedulazione_esame = True
+        u.flag_cartella_radiologica = True
+        u.save()
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica RX'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica CT'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica MR'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica US'))
+        u.save()
+
+    if not Utente.objects.filter(username='donkey').exists():
+        u = Utente()
+        u.radiologia = Radiologia.objects.get(nome='RADIOLOGIA')
+        u.username = 'donkey'
+        u.password = make_password('donkey')
+        u.email = 'donkey@donkey.com'
+        u.first_name = 'Armindo'
+        u.last_name = 'Schinchirimini'
+        u.titolo = ''
+        u.tipo = 'AMM'
+        u.skill_referti = 'R'
+        u.skill_anagrafica_pazienti = 'R'
+        u.flag_accettazione_clinica = True
+        u.flag_revisione_referto = False
+        u.flag_firma_referto = False
+        u.flag_completamento_esame = False
+        u.flag_schedulazione_esame = True
+        u.flag_cartella_radiologica = False
+        u.save()
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica RX'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica CT'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica MR'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica US'))
+        u.save()
+
+    if not Utente.objects.filter(username='amministratore').exists():
+        u = Utente()
+        u.radiologia = Radiologia.objects.get(nome='RADIOLOGIA')
+        u.username = 'amministratore'
+        u.password = make_password('amministratore')
+        u.email = 'amministratore@amministratore.com'
+        u.first_name = 'Pino'
+        u.last_name = 'Verde'
+        u.titolo = ''
+        u.tipo = 'AMS'
+        u.skill_referti = 'R'
+        u.skill_anagrafica_pazienti = 'R'
+        u.flag_accettazione_clinica = False
+        u.flag_revisione_referto = False
+        u.flag_firma_referto = False
+        u.flag_completamento_esame = False
+        u.flag_schedulazione_esame = False
+        u.flag_cartella_radiologica = False
+        u.save()
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica RX'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica CT'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica MR'))
+        u.sale_diagnostiche.add(SalaDiagnostica.objects.get(nome='Diagnostica US'))
         u.save()
 
     print("Configurazione iniziale attiva")

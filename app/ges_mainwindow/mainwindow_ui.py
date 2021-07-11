@@ -47,6 +47,8 @@ class Ui_MainWindow(object):
         self.actionPreferenze.setObjectName("actionPreferenze")
         self.actionConsegna = QtWidgets.QAction(MainWindow)
         self.actionConsegna.setObjectName("actionConsegna")
+        self.actionLogout = QtWidgets.QAction(MainWindow)
+        self.actionLogout.setObjectName("actionLogout")
         self.menuWorklist.addAction(self.actionEsecuzione_esame)
         self.menuWorklist.addAction(self.actionRefertazione)
         self.menuWorklist.addAction(self.actionFirma)
@@ -57,6 +59,8 @@ class Ui_MainWindow(object):
         self.menuFile.addAction(self.actionConsegna)
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionPreferenze)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionLogout)
         self.menubar_pyris.addAction(self.menuFile.menuAction())
         self.menubar_pyris.addAction(self.menuWorklist.menuAction())
 
@@ -76,3 +80,4 @@ class Ui_MainWindow(object):
         self.actionPrenotazioni.setText(_translate("MainWindow", "Prenotazioni"))
         self.actionPreferenze.setText(_translate("MainWindow", "Preferenze"))
         self.actionConsegna.setText(_translate("MainWindow", "Consegna"))
+        self.actionLogout.setText(_translate("MainWindow", "Logout"))
